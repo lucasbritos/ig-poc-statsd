@@ -25,7 +25,7 @@
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
   "id": 2,
-  "iteration": 1656799937334,
+  "iteration": 1656799937348,
   "links": [],
   "liveNow": false,
   "panels": [
@@ -475,8 +475,8 @@
             {
               "condition": "AND",
               "key": "status_code",
-              "operator": "=",
-              "value": "$status_code"
+              "operator": "=~",
+              "value": "/$status_code/"
             },
             {
               "condition": "AND",
@@ -498,12 +498,12 @@
     "list": [
       {
         "current": {
-          "selected": false,
+          "selected": true,
           "text": [
-            "200"
+            "All"
           ],
           "value": [
-            "200"
+            "$__all"
           ]
         },
         "datasource": {
@@ -527,7 +527,7 @@
       {
         "allValue": "",
         "current": {
-          "selected": false,
+          "selected": true,
           "text": [
             "All"
           ],
@@ -577,7 +577,7 @@
       },
       {
         "current": {
-          "selected": false,
+          "selected": true,
           "text": [
             "All"
           ],
@@ -604,7 +604,7 @@
       },
       {
         "current": {
-          "selected": false,
+          "selected": true,
           "text": "POC",
           "value": "POC"
         },
@@ -635,6 +635,6 @@
   "timezone": "",
   "title": "POC_with_variables",
   "uid": "lXkPkZenz",
-  "version": 3,
+  "version": 5,
   "weekStart": ""
 }
