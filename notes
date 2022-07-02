@@ -1,0 +1,8 @@
+mkdir -p eproject/eapp
+docker-compose run web django-admin startproject eproject .
+docker-compose run web django-admin startapp eapp
+docker-compose run web python manage.py migrate
+
+sudo chmod -R 777 web/
+
+docker volume rm ig-poc-statsd_influxdb-storage

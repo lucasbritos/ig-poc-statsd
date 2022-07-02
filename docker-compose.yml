@@ -1,0 +1,41 @@
+version: '3'
+services:
+  web:
+    build: ./web/
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - ./web:/code
+    ports:
+      - "8000:8000"
+
+  telegraf:
+    container_name: telegraf
+    image: "telegraf:latest"
+    volumes:
+      - ./telegraf/telegraf.conf:/etc/telegraf/telegraf.conf
+      - ./telegraf/conf.d:/etc/telegraf/conf.d
+    command: --config-directory /etc/telegraf/conf.d
+
+  influxdb:
+    image: "influxdb:1.8"
+    volumes:
+      - influxdb-storage:/var/lib/influxdb
+      - ./influxdb/influxdb.conf:/etc/influxdb/influxdb.conf
+
+  grafana:
+    container_name: grafana
+    image: "grafana/grafana:latest"
+    ports:
+    - "3000:3000"
+    volumes:
+    - grafana-storage:/var/lib/grafana
+    restart: always
+
+
+volumes:
+  grafana-storage:
+  influxdb-storage:
+  postgres-storage:
+
+networks:
+  default:
