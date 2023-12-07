@@ -1,10 +1,10 @@
 # POC: Using statsd with Django
 
-## Compose
+## Compose services
 
 * web: Minimal Django application on port 8000 http://localhost:8000/helloworld/
 * telegraf: Simulates a local agent, listening port UDP 8125 for statsd
-* infuxdb & grafana: Monitoring stack http://localhost:3000 **(This could be replaced by New Relic, Datadog, Cludwatch etc)**
+* influxdb & grafana: Monitoring stack http://localhost:3000 **(This could be replaced by New Relic, Datadog, Cloudwatch etc)**
 
 
 ## Metrics collected:
@@ -28,7 +28,7 @@ stats.timing('request', enlapsed, tags=stats_tags)
 
 ## Steps:
 
-1. docker-compose up -d
+1. ```docker-compose up -d```
 2. Load InfluxDB datasource to grafana: http://influxdb:8086
 3. Load Grafana dashboards JSONs in grafana/dashboards folder
 4. Run traffic generator to have some metrics on dashboards:
