@@ -3,8 +3,8 @@
 ## Compose
 
 * web: Minimal Django application on port 8000 http://localhost:8000/helloworld/
-* telegraf: Simulates a local agent, listenin port UDP 8125 for statsd
-* inlfuxdb & grafana: Monitoring stack (Thie could be replaced by New Relic, Datadog, Cludwatch etc)  http://localhost:3000
+* telegraf: Simulates a local agent, listening port UDP 8125 for statsd
+* infuxdb & grafana: Monitoring stack http://localhost:3000 (This could be replaced by New Relic, Datadog, Cludwatch etc)
 
 
 ## Metrics collected:
